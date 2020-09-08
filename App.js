@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, TextInput, View, Button } from 'react-native';
 
 export default function App() {
+  const [name, setName] = useState('Push the button');
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ padding: 40 }}>
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+        <TextInput style={{ height: 45, width: "80%", fontSize: 20, borderBottomColor: "black", borderBottomWidth: 1, marginBottom: 20, textAlign: "center" }}
+          placeholder="Course Goal" />
+        <Button title="ADD" />
+      </View>
+
     </View>
   );
 }
